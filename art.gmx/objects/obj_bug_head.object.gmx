@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>length = 2;
-latency = 31;
+latency = 64;
 if length &gt; 0 {next_segment = instance_create(x,y,obj_bug_segment);}
 next_segment.length = length-1;
 next_segment.latency = latency;
@@ -58,6 +58,7 @@ path = path_add();
             <kind>1</kind>
             <string>with next_segment { instance_destroy(); }
 path_delete(path);
+global.points += 1;
 </string>
           </argument>
         </arguments>

@@ -71,6 +71,7 @@ with next_segment { instance_destroy(); }}
           <argument>
             <kind>1</kind>
             <string>last_segment.next_segment = last_segment;
+global.points += 1;
 </string>
           </argument>
         </arguments>
