@@ -28,10 +28,8 @@
     <sprite>sprites\spr_sunflower</sprite>
     <sprite>sprites\spr_mushroom</sprite>
     <sprite>sprites\spr_faucet</sprite>
-    <sprite>sprites\sprite27_04pavinform256</sprite>
     <sprite>sprites\spr_projectile</sprite>
     <sprite>sprites\spr_cactus</sprite>
-    <sprite>sprites\sprite21</sprite>
     <sprite>sprites\frog_dig</sprite>
     <sprite>sprites\frog_idle</sprite>
     <sprite>sprites\frog_jump</sprite>
@@ -39,6 +37,7 @@
     <sprite>sprites\frog_tongue</sprite>
     <sprite>sprites\spr_bump</sprite>
     <sprite>sprites\spr_mini_frog</sprite>
+    <sprite>sprites\spr_minimap</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgn_mountains</background>
@@ -54,12 +53,14 @@
     <script>scripts\scr_frog_jump.gml</script>
     <script>scripts\scr_pounce.gml</script>
     <script>scripts\scr_frog_tongue.gml</script>
+    <script>scripts\scr_minimap.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_greener</object>
     <object>objects\obj_bluer</object>
     <object>objects\purpler</object>
+    <object>objects\obj_bean</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_crate</object>
     <object>objects\obj_grass</object>
@@ -69,11 +70,11 @@
     <object>objects\obj_mushroom</object>
     <object>objects\obj_cactus</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_dead</object>
     <object>objects\obj_bug_head</object>
     <object>objects\obj_bug_segment</object>
     <object>objects\obj_spike</object>
     <object>objects\obj_bump</object>
-    <object>objects\object12</object>
     <object>objects\obj_faucet</object>
     <object>objects\obj_projectile</object>
     <object>objects\obj_frog</object>

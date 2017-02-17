@@ -72,6 +72,10 @@ with next_segment { instance_destroy(); }}
             <kind>1</kind>
             <string>last_segment.next_segment = last_segment;
 global.points += 1;
+corpse = instance_create(x,y,obj_dead);
+corpse.sprite_index = sprite_index;
+corpse.image_speed = 0;
+corpse.image_xscale = image_xscale;
 </string>
           </argument>
         </arguments>

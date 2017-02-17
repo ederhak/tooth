@@ -48,8 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (mp_grid_path(global.grid,path,x,y,obj_player.x div 32 * 32,obj_player.y div 32 * 32,true)) {
-    path_start(path, 2, path_action_stop,false);
+            <string>if (mp_grid_path(global.grid,path,x,y,obj_player.x div 32 * 32,obj_player.y div 32 * 32,false)) {
+    path_start(path, 3, path_action_stop,false);
 }
 if (x&gt;obj_player.x) {image_xscale = -1} else {image_xscale = 1}
 </string>

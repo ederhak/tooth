@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//global.points -= 1;
+            <string>corpse = instance_create(x,y,obj_dead);
+corpse.sprite_index = sprite_index;
+corpse.image_speed = 0;
+corpse.image_xscale = image_xscale;
 </string>
           </argument>
         </arguments>

@@ -28,7 +28,7 @@
             <string>image_speed = random_range(0.75,1.5);
 image_xscale = choose(-1,1);
 image_yscale = random_range(1,2);
-instance_change(choose(obj_smallgrass,obj_smallgrass,obj_smallgrass,obj_sunflower,obj_cactus,obj_mushroom), false);
+instance_change(choose(obj_smallgrass,obj_smallgrass,obj_smallgrass,obj_smallgrass,obj_smallgrass,obj_smallgrass,obj_sunflower,obj_cactus,obj_mushroom), false);
 </string>
           </argument>
         </arguments>
