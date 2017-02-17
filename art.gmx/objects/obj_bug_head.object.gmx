@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>length = 3;
+            <string>length = 2;
 latency = 31;
 if length &gt; 0 {next_segment = instance_create(x,y,obj_bug_segment);}
 next_segment.length = length-1;

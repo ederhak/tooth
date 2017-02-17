@@ -3,7 +3,7 @@
   <spriteName>spr_player_stand</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -151,6 +151,8 @@ if (keyboard_check_pressed(vk_up)) {
 audio_emitter_pitch(ae, random_range(.75,1.25));
 audio_emitter_gain(ae,random_range(.5,1));
 audio_play_sound_on(ae,snd_laser_1, false,9);}
+
+if (instance_number(obj_frog) == 0 &amp;&amp; global.points &gt;= 100) {instance_create(x,-y, obj_frog)}
 </string>
           </argument>
         </arguments>
@@ -229,6 +231,28 @@ game_restart();
         <isnot>0</isnot>
       </action>
     </event>
+    <event eventtype="5" enumb="70">
+      <action>
+        <libid>1</libid>
+        <id>531</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_fullscreen</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="3">
       <action>
         <libid>1</libid>
@@ -248,6 +272,30 @@ game_restart();
             <kind>1</kind>
             <string>mp_grid_destroy(global.grid);
 audio_emitter_free(ae);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+draw_healthbar(view_xview[0],view_yview[0]+448,view_xview[0]+640,view_yview[0]+480, global.points, c_maroon, c_red, c_green, 1, true, true);
 </string>
           </argument>
         </arguments>
