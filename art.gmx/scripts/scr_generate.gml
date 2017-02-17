@@ -23,7 +23,6 @@ dirtlevel2 = ((room_height/32)*32);
         instance_create(xx,yy+32, obj_dirt);
         l = yy;
     }
-    if l = noone {l = ah}
     for (yy = l; yy < dirtlevel2; yy +=32) 
     {
         if (yy >= ah)

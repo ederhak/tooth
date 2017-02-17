@@ -24,39 +24,58 @@
     <sprite>sprites\spr_bug_body</sprite>
     <sprite>sprites\spr_spike</sprite>
     <sprite>sprites\spr_bug_head</sprite>
-    <sprite>sprites\sprite13_unnamed (6)</sprite>
-    <sprite>sprites\sprite14_unnamed (3)</sprite>
-    <sprite>sprites\sprite15_unnamed (4)</sprite>
-    <sprite>sprites\sprite16_unnamed (5)</sprite>
-    <sprite>sprites\sprite17_unnamed (7)</sprite>
-    <sprite>sprites\sprite18_unnamed (8)</sprite>
-    <sprite>sprites\sprite20_unnamed (10)</sprite>
-    <sprite>sprites\sprite21_unnamed (11)</sprite>
-    <sprite>sprites\sprite19_unnamed (9)</sprite>
+    <sprite>sprites\spr_beasr</sprite>
+    <sprite>sprites\spr_sunflower</sprite>
+    <sprite>sprites\spr_mushroom</sprite>
+    <sprite>sprites\spr_faucet</sprite>
+    <sprite>sprites\spr_projectile</sprite>
+    <sprite>sprites\spr_cactus</sprite>
     <sprite>sprites\sprite21</sprite>
+    <sprite>sprites\frog_dig</sprite>
+    <sprite>sprites\frog_idle</sprite>
+    <sprite>sprites\frog_jump</sprite>
+    <sprite>sprites\frog_pounce</sprite>
+    <sprite>sprites\frog_tongue</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bgn_mountains</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_generate.gml</script>
     <script>scripts\scr_render.gml</script>
     <script>scripts\scr_move_right.gml</script>
     <script>scripts\scr_move_left.gml</script>
+    <script>scripts\scr_frog_idle.gml</script>
+    <script>scripts\scr_frog_dig.gml</script>
+    <script>scripts\scr_frog_jump.gml</script>
+    <script>scripts\scr_pounce.gml</script>
+    <script>scripts\scr_frog_tongue.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shader0.shader</shader>
+  </shaders>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_greener</object>
+    <object>objects\obj_bluer</object>
     <object>objects\purpler</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_crate</object>
     <object>objects\obj_grass</object>
     <object>objects\obj_dirt</object>
     <object>objects\obj_smallgrass</object>
+    <object>objects\obj_sunflower</object>
+    <object>objects\obj_mushroom</object>
+    <object>objects\obj_cactus</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_bug_head</object>
     <object>objects\obj_bug_segment</object>
     <object>objects\obj_spike</object>
     <object>objects\object12</object>
+    <object>objects\obj_faucet</object>
+    <object>objects\obj_projectile</object>
+    <object>objects\obj_frog</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

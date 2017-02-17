@@ -34,6 +34,9 @@ vcells = view_hview[0]/cell_width;
 global.grid = mp_grid_create(0,0,hcells,vcells,cell_width,cell_height);
 
 mp_grid_add_instances(global.grid,obj_wall,true);
+
+globalvar points;
+global.points = 0;
 </string>
           </argument>
         </arguments>
