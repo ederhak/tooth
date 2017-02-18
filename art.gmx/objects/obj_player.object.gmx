@@ -37,6 +37,8 @@ mp_grid_add_instances(global.grid,obj_wall,true);
 
 globalvar points;
 global.points = 0;
+
+instance_create(x,y,obj_background);
 </string>
           </argument>
         </arguments>
@@ -152,7 +154,7 @@ if (x &lt;= (global.length2/2) &amp;&amp; cancreate)
 }
 }
 
-if (instance_number(obj_frog) == 0 &amp;&amp; global.points &gt;= 100) {instance_create(x,-y, obj_frog)}
+if (instance_number(obj_frog) == 0 &amp;&amp; global.points &gt;= 100) {instance_create(x,-y*2, obj_frog)}
 
 
 </string>

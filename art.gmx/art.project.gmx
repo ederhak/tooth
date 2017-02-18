@@ -42,8 +42,19 @@
     <sprite>sprites\spr_mini_frog</sprite>
     <sprite>sprites\spr_minimap</sprite>
     <sprite>sprites\COPPER_COIN</sprite>
+    <sprite>sprites\spr_chicken</sprite>
+    <sprite>sprites\spr_dog</sprite>
+    <sprite>sprites\spr_froggo</sprite>
+    <sprite>sprites\spr_froggo_2</sprite>
+    <sprite>sprites\spr_monkey</sprite>
+    <sprite>sprites\spr_fish</sprite>
+    <sprite>sprites\sprite39</sprite>
+    <sprite>sprites\spr_radiater</sprite>
     <sprite>sprites\SPR_GOLD</sprite>
     <sprite>sprites\SPR_SILVER</sprite>
+    <sprite>sprites\spr_slug</sprite>
+    <sprite>sprites\spr_rainbow</sprite>
+    <sprite>sprites\spr_background_1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgn_mountains</background>
@@ -87,6 +98,9 @@
     <object>objects\obj_silver</object>
     <object>objects\obj_copper</object>
     <object>objects\obj_gold</object>
+    <object>objects\obj_rainbow</object>
+    <object>objects\obj_slug</object>
+    <object>objects\obj_background</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
