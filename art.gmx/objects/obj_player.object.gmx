@@ -158,7 +158,7 @@ if (x &lt;= (global.length2/2) &amp;&amp; cancreate)
 }
 }
 
-if (instance_number(obj_frog) == 0 &amp;&amp; global.points &gt;= 100 &amp;&amp; switcher) {instance_create(x,-y*2, obj_frog); switcher =0;}
+if (instance_number(obj_frog) == 0 &amp;&amp; global.points &gt;= 1000 &amp;&amp; switcher) {instance_create(x,-y*2, obj_frog); switcher =0;}
 
 
 </string>
@@ -222,8 +222,8 @@ if (hp &lt; 2) {
 game_restart();
 } else {
 obj_player.hp -= 1;
-obj_player.vsp = -obj_player.vsp;
-obj_player.hsp = -obj_player.hsp;
+obj_player.vsp = -obj_player.vsp*2;
+obj_player.hsp = -obj_player.hsp*2;
 }
 }
 </string>
@@ -260,9 +260,9 @@ obj_player.vsp = -obj_player.vsp;
 if (hp &lt; 2) {
 game_restart();
 } else {
-hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
+obj_player.hp -= 1;
+obj_player.vsp = -obj_player.vsp*2;
+obj_player.hsp = -obj_player.hsp*2;
 }
 }
 </string>
@@ -326,8 +326,8 @@ if (hp &lt; 2) {
 game_restart();
 } else {
 obj_player.hp -= 1;
-obj_player.vsp = -obj_player.vsp;
-obj_player.hsp = -obj_player.hsp;
+obj_player.vsp = -obj_player.vsp*2;
+obj_player.hsp = -obj_player.hsp*2;
 }
 }
 </string>
@@ -383,8 +383,8 @@ audio_play_sound_on(ae,snd_laser_1, false,9);
 game_restart();
 } else {
 hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
+vsp = -vsp*2;
+hsp = -hsp*2;
 }
 </string>
           </argument>
@@ -420,47 +420,9 @@ obj_player.vsp = -obj_player.vsp;
 if (hp &lt; 2) {
 game_restart();
 } else {
-hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
-}
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_player">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if obj_player.vsp &gt; 0 
-{
-with other 
-{
-if !(alarm[0] &gt; -1) {alarm[0] = room_speed*5;}
-obj_player.vsp = -obj_player.vsp;
-}
-} else {
-if (hp &lt; 2) {
-game_restart();
-} else {
-hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
+obj_player.hp -= 1;
+obj_player.vsp = -obj_player.vsp*2;
+obj_player.hsp = -obj_player.hsp*2;
 }
 }
 </string>
@@ -526,7 +488,7 @@ audio_emitter_free(ae);
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_healthbar(view_xview[0]+1,view_yview[0]+447,view_xview[0]+639,view_yview[0]+479, global.points, c_maroon, c_red, c_green, 1, true, true);
+draw_healthbar(view_xview[0]+1,view_yview[0]+447,view_xview[0]+639,view_yview[0]+479, global.points/10, c_maroon, c_red, c_green, 1, true, true);
 for (temphp = hp; temphp &gt; 0; temphp -= 1)
 {
 draw_sprite(spr_shield, 0 , view_xview[0]+((temphp-1)*32), view_yview[0]+416);
