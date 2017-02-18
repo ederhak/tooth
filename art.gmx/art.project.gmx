@@ -58,6 +58,11 @@
     <sprite>sprites\spr_froge</sprite>
     <sprite>sprites\spr_explosion</sprite>
     <sprite>sprites\spr_shield</sprite>
+    <sprite>sprites\spr_teenyfrog</sprite>
+    <sprite>sprites\sprite44</sprite>
+    <sprite>sprites\sprite45</sprite>
+    <sprite>sprites\sprite46</sprite>
+    <sprite>sprites\sprite47</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgn_mountains</background>
