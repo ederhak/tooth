@@ -59,7 +59,7 @@ instance_create(x,y,obj_background);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>grav = 0.4; hsp = 0; vsp = 0; jumpSpeed = 8; moveSpeed = 4; double_jump = 1;
+            <string>grav = 0.4; hsp = 0; vsp = 0; jumpSpeed = 8; moveSpeed = 4; double_jump = 1; hp = 1;
 
 cancreate = true;
 
@@ -187,9 +187,14 @@ with other
 if !(alarm[0] &gt; -1) {alarm[0] = room_speed*5;}
 obj_player.vsp = -obj_player.vsp;
 }
-} else 
-{
+} else {
+if (hp &lt; 2) {
 game_restart();
+} else {
+hp -= 1;
+vsp = -vsp;
+hsp = -hsp;
+}
 }
 </string>
           </argument>
@@ -243,12 +248,18 @@ audio_play_sound_on(ae,snd_coin, false,8)
 {
 with other 
 {
-hp -= 1;
+instance_destroy();
 obj_player.vsp = -obj_player.vsp;
 }
 } else 
 {
+if (hp &lt; 2) {
 game_restart();
+} else {
+hp -= 1;
+vsp = -vsp;
+hsp = -hsp;
+}
 }
 </string>
           </argument>
@@ -299,8 +310,13 @@ audio_play_sound_on(ae,snd_laser_1, false,9);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_restart();
-
+            <string>if (hp &lt; 2) {
+game_restart();
+} else {
+hp -= 1;
+vsp = -vsp;
+hsp = -hsp;
+}
 </string>
           </argument>
         </arguments>
@@ -332,7 +348,13 @@ obj_player.vsp = -obj_player.vsp;
 }
 } else 
 {
+if (hp &lt; 2) {
 game_restart();
+} else {
+hp -= 1;
+vsp = -vsp;
+hsp = -hsp;
+}
 }
 </string>
           </argument>
@@ -398,6 +420,10 @@ audio_emitter_free(ae);
             <kind>1</kind>
             <string>draw_self();
 draw_healthbar(view_xview[0]+1,view_yview[0]+447,view_xview[0]+639,view_yview[0]+479, global.points, c_maroon, c_red, c_green, 1, true, true);
+for (temphp = hp; temphp &gt; 0; temphp -= 1)
+{
+draw_sprite(spr_shield, 0 , view_xview[0]+((temphp-1)*32), view_yview[0]+416);
+}
 </string>
           </argument>
         </arguments>

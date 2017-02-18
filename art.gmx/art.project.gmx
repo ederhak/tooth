@@ -57,6 +57,7 @@
     <sprite>sprites\spr_background_1</sprite>
     <sprite>sprites\spr_froge</sprite>
     <sprite>sprites\spr_explosion</sprite>
+    <sprite>sprites\spr_shield</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgn_mountains</background>
@@ -98,6 +99,7 @@
     <object>objects\obj_frog</object>
     <object>objects\COIN</object>
     <object>objects\obj_silver</object>
+    <object>objects\obj_shield</object>
     <object>objects\obj_copper</object>
     <object>objects\obj_gold</object>
     <object>objects\obj_rainbow</object>

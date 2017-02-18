@@ -80,7 +80,8 @@ if ran == 1 {instance_create(x,y,obj_copper)} else if ran == 2 {instance_create(
 if value &gt; 3 {ran = choose(1,2,3)} else if value &gt; 2 { ran = choose(1,2)} else {ran = 1}
 }
 obj_player.vsp = obj_player.vsp*obj_player.vsp;
- with boop {instance_destroy()}
+with boop {instance_destroy()}
+if (irandom_range(1,100) == 1) {instance_create(x,y,obj_shield)}
 </string>
           </argument>
         </arguments>
