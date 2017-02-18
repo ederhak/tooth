@@ -40,7 +40,6 @@
     <sprite>sprites\frog_tongue</sprite>
     <sprite>sprites\spr_bump</sprite>
     <sprite>sprites\spr_mini_frog</sprite>
-    <sprite>sprites\spr_minimap</sprite>
     <sprite>sprites\COPPER_COIN</sprite>
     <sprite>sprites\spr_chicken</sprite>
     <sprite>sprites\spr_dog</sprite>
@@ -57,12 +56,17 @@
     <sprite>sprites\spr_background_1</sprite>
     <sprite>sprites\spr_froge</sprite>
     <sprite>sprites\spr_explosion</sprite>
+    <sprite>sprites\spr_frogbox</sprite>
     <sprite>sprites\spr_shield</sprite>
+    <sprite>sprites\spr_minifrog</sprite>
+    <sprite>sprites\spr_boss_bullet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgn_mountains</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path0</path>
+  </paths>
   <scripts name="scripts">
     <script>scripts\scr_generate.gml</script>
     <script>scripts\scr_render.gml</script>
@@ -96,6 +100,7 @@
     <object>objects\obj_bump</object>
     <object>objects\obj_faucet</object>
     <object>objects\obj_projectile</object>
+    <object>objects\obj_boss_projectile</object>
     <object>objects\obj_frog</object>
     <object>objects\COIN</object>
     <object>objects\obj_silver</object>
@@ -106,6 +111,8 @@
     <object>objects\obj_slug</object>
     <object>objects\obj_background</object>
     <object>objects\obj_explosion</object>
+    <object>objects\obj_boss</object>
+    <object>objects\obj_minifrog</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
