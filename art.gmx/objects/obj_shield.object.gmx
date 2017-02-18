@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>grav = 0.4; hsp = 0; vsp = 0; jumpSpeed = 8; moveSpeed = 4;
-value = 2;
 alarm[0] = 1;
 </string>
           </argument>
@@ -50,7 +49,7 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_player.hp += 1;
+            <string>obj_player.hp +=1;
 </string>
           </argument>
         </arguments>
@@ -73,7 +72,7 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string> hsp = choose(-3,-2,-1,1,2,3); vsp = choose(-3,-2,-1,1,2,3);
+            <string>hsp = choose(-3,-2,-1,1,2,3); vsp = choose(-3,-2,-1,1,2,3);
 </string>
           </argument>
         </arguments>

@@ -34,6 +34,36 @@ hp = 100;
         </arguments>
       </action>
     </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var ran = choose(1,2,3);
+for (value =random_range(36,1296); value &gt; 1; value -= ran)
+{
+if ran == 1 {instance_create(x,y,obj_copper)} else if ran == 2 {instance_create(x,y,obj_silver)} else if ran == 3 instance_create(x,y,obj_gold){}
+if value &gt; 3 {ran = choose(1,2,3)} else if value &gt; 2 { ran = choose(1,2)} else {ran = 1}
+if (irandom_range(1,10) == 1) {instance_create(x,y,obj_shield)}
+}
+instance_create(obj_player.x, -obj_player.y*2, obj_boss);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>

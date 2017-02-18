@@ -61,6 +61,8 @@ instance_create(x,y,obj_background);
             <kind>1</kind>
             <string>grav = 0.4; hsp = 0; vsp = 0; jumpSpeed = 8; moveSpeed = 4; double_jump = 1; hp = 1;
 
+switcher = 1;
+
 cancreate = true;
 
 randomize();
@@ -116,7 +118,7 @@ mp_grid_add_instances(global.grid,obj_wall,true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>kLeft = -keyboard_check(vk_left); kRight = keyboard_check(vk_right); kJump = keyboard_check_pressed(vk_up); kFall = keyboard_check(vk_down);
+            <string>kLeft = -keyboard_check(ord("A")); kRight = keyboard_check(ord("D")); kJump = keyboard_check_pressed(ord("W")); kFall = keyboard_check(ord("S"));
 
 move = kLeft + kRight; hsp = move * moveSpeed; if (vsp &lt; 10 &amp;&amp; !kFall) { vsp += grav; } else if (vsp &lt; 20 &amp;&amp; kFall) { vsp+= 2*grav;};
 
@@ -130,6 +132,7 @@ if (place_meeting(x + hsp, y, obj_wall)) { while (!place_meeting(x + sign(hsp), 
 bop = instance_nearest(x,y,obj_crate);
 if (place_meeting(x, y + vsp, obj_crate) &amp;&amp; vsp &lt; 0) { with bop {instance_destroy()}}
 if (place_meeting(x, y + vsp, obj_crate) &amp;&amp; vsp &gt; 10) { with bop {instance_destroy()}}
+if place_meeting(x,y+vsp, obj_enemy) {double_jump = 1;}
 if (place_meeting(x, y + vsp, obj_wall)) { while (!place_meeting(x, y + sign(vsp), obj_wall)) { y += sign(vsp); } vsp = 0; } y += vsp;
 
 if move != 0 {sprite_index = spr_player_walk image_xscale = move;} else {sprite_index = spr_player_stand}
@@ -155,9 +158,74 @@ if (x &lt;= (global.length2/2) &amp;&amp; cancreate)
 }
 }
 
-if (instance_number(obj_frog) == 0 &amp;&amp; global.points &gt;= 100) {instance_create(x,-y*2, obj_frog)}
+if (instance_number(obj_frog) == 0 &amp;&amp; global.points &gt;= 1000 &amp;&amp; switcher) {instance_create(x,-y*2, obj_frog); switcher =0;}
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_shield">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other {instance_destroy();}
+audio_emitter_pitch(ae, random_range(.75,1.25));
+audio_emitter_gain(ae,random_range(.5,1));
+audio_play_sound_on(ae,snd_coin, false,8)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_boss">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if obj_player.vsp &gt; 0 
+{
+with other 
+{
+instance_destroy();
+obj_player.vsp = -obj_player.vsp;
+}
+} else 
+{
+if (hp &lt; 2) {
+game_restart();
+} else {
+obj_player.hp -= 1;
+obj_player.vsp = -obj_player.vsp*2;
+obj_player.hsp = -obj_player.hsp*2;
+}
+}
 </string>
           </argument>
         </arguments>
@@ -192,9 +260,9 @@ obj_player.vsp = -obj_player.vsp;
 if (hp &lt; 2) {
 game_restart();
 } else {
-hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
+obj_player.hp -= 1;
+obj_player.vsp = -obj_player.vsp*2;
+obj_player.hsp = -obj_player.hsp*2;
 }
 }
 </string>
@@ -257,9 +325,9 @@ obj_player.vsp = -obj_player.vsp;
 if (hp &lt; 2) {
 game_restart();
 } else {
-hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
+obj_player.hp -= 1;
+obj_player.vsp = -obj_player.vsp*2;
+obj_player.hsp = -obj_player.hsp*2;
 }
 }
 </string>
@@ -315,8 +383,8 @@ audio_play_sound_on(ae,snd_laser_1, false,9);
 game_restart();
 } else {
 hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
+vsp = -vsp*2;
+hsp = -hsp*2;
 }
 </string>
           </argument>
@@ -352,47 +420,9 @@ obj_player.vsp = -obj_player.vsp;
 if (hp &lt; 2) {
 game_restart();
 } else {
-hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
-}
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_player">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if obj_player.vsp &gt; 0 
-{
-with other 
-{
-if !(alarm[0] &gt; -1) {alarm[0] = room_speed*5;}
-obj_player.vsp = -obj_player.vsp;
-}
-} else {
-if (hp &lt; 2) {
-game_restart();
-} else {
-hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
+obj_player.hp -= 1;
+obj_player.vsp = -obj_player.vsp*2;
+obj_player.hsp = -obj_player.hsp*2;
 }
 }
 </string>
@@ -458,7 +488,7 @@ audio_emitter_free(ae);
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_healthbar(view_xview[0]+1,view_yview[0]+447,view_xview[0]+639,view_yview[0]+479, global.points, c_maroon, c_red, c_green, 1, true, true);
+draw_healthbar(view_xview[0]+1,view_yview[0]+447,view_xview[0]+639,view_yview[0]+479, global.points/10, c_maroon, c_red, c_green, 1, true, true);
 for (temphp = hp; temphp &gt; 0; temphp -= 1)
 {
 draw_sprite(spr_shield, 0 , view_xview[0]+((temphp-1)*32), view_yview[0]+416);
