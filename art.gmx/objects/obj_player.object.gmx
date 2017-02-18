@@ -118,7 +118,7 @@ mp_grid_add_instances(global.grid,obj_wall,true);
             <kind>1</kind>
             <string>kLeft = -keyboard_check(vk_left); kRight = keyboard_check(vk_right); kJump = keyboard_check_pressed(vk_up); kFall = keyboard_check(vk_down);
 
-move = kLeft + kRight; hsp = move * moveSpeed; if (vsp &lt; 10 &amp;&amp; !kFall) { vsp += grav; } else if (vsp &lt; 30 &amp;&amp; kFall) { vsp+= 3*grav;};
+move = kLeft + kRight; hsp = move * moveSpeed; if (vsp &lt; 10 &amp;&amp; !kFall) { vsp += grav; } else if (vsp &lt; 20 &amp;&amp; kFall) { vsp+= 2*grav;};
 
 if (place_meeting(x, y + 1, obj_wall) &amp;&amp; kJump) { vsp = kJump * -jumpSpeed double_jump = 1 audio_emitter_pitch(ae, random_range(.75,1.25));
 audio_emitter_gain(ae,random_range(.5,1));
