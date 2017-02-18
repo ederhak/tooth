@@ -116,9 +116,9 @@ mp_grid_add_instances(global.grid,obj_wall,true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>kLeft = -keyboard_check(vk_left); kRight = keyboard_check(vk_right); kJump = keyboard_check_pressed(vk_up);
+            <string>kLeft = -keyboard_check(vk_left); kRight = keyboard_check(vk_right); kJump = keyboard_check_pressed(vk_up); kFall = keyboard_check(vk_down);
 
-move = kLeft + kRight; hsp = move * moveSpeed; if (vsp &lt; 10) { vsp += grav; };
+move = kLeft + kRight; hsp = move * moveSpeed; if (vsp &lt; 10 &amp;&amp; !kFall) { vsp += grav; } else if (vsp &lt; 20 &amp;&amp; kFall) { vsp+= 2*grav;};
 
 if (place_meeting(x, y + 1, obj_wall) &amp;&amp; kJump) { vsp = kJump * -jumpSpeed double_jump = 1 audio_emitter_pitch(ae, random_range(.75,1.25));
 audio_emitter_gain(ae,random_range(.5,1));
@@ -129,6 +129,7 @@ audio_play_sound_on(ae,snd_laser_1, false,9); }
 if (place_meeting(x + hsp, y, obj_wall)) { while (!place_meeting(x + sign(hsp), y, obj_wall)) { x += sign(hsp); } hsp = 0; } x += hsp;
 bop = instance_nearest(x,y,obj_crate);
 if (place_meeting(x, y + vsp, obj_crate) &amp;&amp; vsp &lt; 0) { with bop {instance_destroy()}}
+if (place_meeting(x, y + vsp, obj_crate) &amp;&amp; vsp &gt; 10) { with bop {instance_destroy()}}
 if (place_meeting(x, y + vsp, obj_wall)) { while (!place_meeting(x, y + sign(vsp), obj_wall)) { y += sign(vsp); } vsp = 0; } y += vsp;
 
 if move != 0 {sprite_index = spr_player_walk image_xscale = move;} else {sprite_index = spr_player_stand}
