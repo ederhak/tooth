@@ -10,6 +10,9 @@
     <sound>sound\snd_gas</sound>
     <sound>sound\snd_laser_1</sound>
     <sound>sound\snd_laser_2</sound>
+    <sound>sound\snd_coin</sound>
+    <sound>sound\snd_birth</sound>
+    <sound>sound\snd_death</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_greener</sprite>
@@ -56,7 +59,6 @@
     <script>scripts\scr_frog_jump.gml</script>
     <script>scripts\scr_pounce.gml</script>
     <script>scripts\scr_frog_tongue.gml</script>
-    <script>scripts\scr_minimap.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -87,7 +89,7 @@
     <object>objects\obj_gold</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

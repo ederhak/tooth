@@ -25,6 +25,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>audio_emitter_pitch(obj_player.ae, random_range(.75,1.25));
+audio_emitter_gain(obj_player.ae,random_range(.5,1));
+audio_play_sound_on(obj_player.ae,snd_death, false,9);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>grav = 0.4; hsp = 0; vsp = 0; jumpSpeed = 8; moveSpeed = 4;
 image_angle = 180;
 </string>
