@@ -56,6 +56,7 @@
     <sprite>sprites\spr_rainbow</sprite>
     <sprite>sprites\spr_background_1</sprite>
     <sprite>sprites\spr_froge</sprite>
+    <sprite>sprites\spr_explosion</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgn_mountains</background>
@@ -100,8 +101,10 @@
     <object>objects\obj_copper</object>
     <object>objects\obj_gold</object>
     <object>objects\obj_rainbow</object>
+    <object>objects\obj_froge</object>
     <object>objects\obj_slug</object>
     <object>objects\obj_background</object>
+    <object>objects\obj_explosion</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>

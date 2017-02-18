@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>grav = 0.4; hsp = 0; vsp = 0; jumpSpeed = 8; moveSpeed = 4;
+            <string>grav = 0.4; hsp = 0; vsp = 0; jumpSpeed = 6; moveSpeed = 4;
 </string>
           </argument>
         </arguments>
