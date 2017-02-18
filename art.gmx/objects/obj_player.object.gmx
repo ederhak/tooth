@@ -61,6 +61,8 @@ instance_create(x,y,obj_background);
             <kind>1</kind>
             <string>grav = 0.4; hsp = 0; vsp = 0; jumpSpeed = 8; moveSpeed = 4; double_jump = 1; hp = 1;
 
+switcher = 1;
+
 cancreate = true;
 
 randomize();
@@ -116,7 +118,7 @@ mp_grid_add_instances(global.grid,obj_wall,true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>kLeft = -keyboard_check(vk_left); kRight = keyboard_check(vk_right); kJump = keyboard_check_pressed(vk_up); kFall = keyboard_check(vk_down);
+            <string>kLeft = -keyboard_check(ord("A")); kRight = keyboard_check(ord("D")); kJump = keyboard_check_pressed(ord("W")); kFall = keyboard_check(ord("S"));
 
 move = kLeft + kRight; hsp = move * moveSpeed; if (vsp &lt; 10 &amp;&amp; !kFall) { vsp += grav; } else if (vsp &lt; 20 &amp;&amp; kFall) { vsp+= 2*grav;};
 
@@ -155,9 +157,35 @@ if (x &lt;= (global.length2/2) &amp;&amp; cancreate)
 }
 }
 
-if (instance_number(obj_frog) == 0 &amp;&amp; global.points &gt;= 100) {instance_create(x,-y*2, obj_frog)}
+if (instance_number(obj_frog) == 0 &amp;&amp; global.points &gt;= 100 &amp;&amp; switcher) {instance_create(x,-y*2, obj_frog); switcher =0;}
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_shield">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other {instance_destroy();}
+audio_emitter_pitch(ae, random_range(.75,1.25));
+audio_emitter_gain(ae,random_range(.5,1));
+audio_play_sound_on(ae,snd_coin, false,8)
 </string>
           </argument>
         </arguments>
