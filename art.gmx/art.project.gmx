@@ -38,6 +38,9 @@
     <sprite>sprites\spr_bump</sprite>
     <sprite>sprites\spr_mini_frog</sprite>
     <sprite>sprites\spr_minimap</sprite>
+    <sprite>sprites\COPPER_COIN</sprite>
+    <sprite>sprites\SPR_GOLD</sprite>
+    <sprite>sprites\SPR_SILVER</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgn_mountains</background>
@@ -78,6 +81,10 @@
     <object>objects\obj_faucet</object>
     <object>objects\obj_projectile</object>
     <object>objects\obj_frog</object>
+    <object>objects\COIN</object>
+    <object>objects\obj_silver</object>
+    <object>objects\obj_copper</object>
+    <object>objects\obj_gold</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

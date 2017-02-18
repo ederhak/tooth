@@ -1,6 +1,6 @@
-for (xx = view_xview[0]; xx > view_wview[0]; xx += 32) 
+for (xx = view_xview[0]; xx < view_wview[0]; xx += 32) 
 {
-    for (yy = view_yview[0]; xx > view_hview[0]; yy += 32)
+    for (yy = view_yview[0]; xx < view_hview[0]; yy += 32)
     {
     if instance_position(xx,yy,obj_wall) 
         {
