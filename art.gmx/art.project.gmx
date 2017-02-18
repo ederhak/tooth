@@ -48,7 +48,7 @@
     <sprite>sprites\spr_froggo_2</sprite>
     <sprite>sprites\spr_monkey</sprite>
     <sprite>sprites\spr_fish</sprite>
-    <sprite>sprites\sprite39</sprite>
+    <sprite>sprites\spr_bubble</sprite>
     <sprite>sprites\spr_radiater</sprite>
     <sprite>sprites\SPR_GOLD</sprite>
     <sprite>sprites\SPR_SILVER</sprite>
@@ -56,6 +56,8 @@
     <sprite>sprites\spr_rainbow</sprite>
     <sprite>sprites\spr_background_1</sprite>
     <sprite>sprites\spr_froge</sprite>
+    <sprite>sprites\spr_explosion</sprite>
+    <sprite>sprites\spr_shield</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgn_mountains</background>
@@ -100,8 +102,10 @@
     <object>objects\obj_copper</object>
     <object>objects\obj_gold</object>
     <object>objects\obj_rainbow</object>
+    <object>objects\obj_froge</object>
     <object>objects\obj_slug</object>
     <object>objects\obj_background</object>
+    <object>objects\obj_explosion</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>

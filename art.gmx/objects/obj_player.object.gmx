@@ -184,10 +184,11 @@ if (instance_number(obj_frog) == 0 &amp;&amp; global.points &gt;= 100) {instance
 {
 with other 
 {
-if !(alarm[0] &gt; -1) {alarm[0] = room_speed*5;}
+if !(alarm[0] &gt; 0) {alarm[0] = room_speed*2.5;}
 obj_player.vsp = -obj_player.vsp;
 }
-} else {
+} else 
+{
 if (hp &lt; 2) {
 game_restart();
 } else {
@@ -348,6 +349,44 @@ obj_player.vsp = -obj_player.vsp;
 }
 } else 
 {
+if (hp &lt; 2) {
+game_restart();
+} else {
+hp -= 1;
+vsp = -vsp;
+hsp = -hsp;
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if obj_player.vsp &gt; 0 
+{
+with other 
+{
+if !(alarm[0] &gt; -1) {alarm[0] = room_speed*5;}
+obj_player.vsp = -obj_player.vsp;
+}
+} else {
 if (hp &lt; 2) {
 game_restart();
 } else {
