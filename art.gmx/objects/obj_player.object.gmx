@@ -132,6 +132,7 @@ if (place_meeting(x + hsp, y, obj_wall)) { while (!place_meeting(x + sign(hsp), 
 bop = instance_nearest(x,y,obj_crate);
 if (place_meeting(x, y + vsp, obj_crate) &amp;&amp; vsp &lt; 0) { with bop {instance_destroy()}}
 if (place_meeting(x, y + vsp, obj_crate) &amp;&amp; vsp &gt; 10) { with bop {instance_destroy()}}
+if place_meeting(x,y+vsp, obj_enemy) {double_jump = 1;}
 if (place_meeting(x, y + vsp, obj_wall)) { while (!place_meeting(x, y + sign(vsp), obj_wall)) { y += sign(vsp); } vsp = 0; } y += vsp;
 
 if move != 0 {sprite_index = spr_player_walk image_xscale = move;} else {sprite_index = spr_player_stand}
@@ -220,9 +221,9 @@ obj_player.vsp = -obj_player.vsp;
 if (hp &lt; 2) {
 game_restart();
 } else {
-hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
+obj_player.hp -= 1;
+obj_player.vsp = -obj_player.vsp;
+obj_player.hsp = -obj_player.hsp;
 }
 }
 </string>
@@ -324,9 +325,9 @@ obj_player.vsp = -obj_player.vsp;
 if (hp &lt; 2) {
 game_restart();
 } else {
-hp -= 1;
-vsp = -vsp;
-hsp = -hsp;
+obj_player.hp -= 1;
+obj_player.vsp = -obj_player.vsp;
+obj_player.hsp = -obj_player.hsp;
 }
 }
 </string>
